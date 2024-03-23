@@ -1,4 +1,5 @@
 const prompt = require('prompt-sync')({sigint: true});
+console.log("Inicio do programa: ")
 
 let Nivel = prompt('Qual o Nível do Pokémon: ')
 let hp = prompt("Qual o HP: ");
