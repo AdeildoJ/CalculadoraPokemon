@@ -5,10 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mestre Pokémon</title>
     <link rel="stylesheet" href="style/style.css"> 
-    <script src=""></script>
-    <style>
-        
-    </style>
 </head>
 <body>
 <header>
@@ -20,7 +16,7 @@
             <div class="redes-sociais">
                 <a href="https://www.instagram.com/alastor_jr/" target="_blank"><img src="images/19724-middle.png" alt="Instagram"></a>
                 <a href="https://www.facebook.com/adeildoalastor/about" target="_blank"><img src="images/VEKTOR ICON7.png" alt="Facebook"></a>
-                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="images/OIP (1).jpeg" alt="Linkedin"></a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="images/link.png" alt="Linkedin"></a>
             </div>
         </div>
         <div class="button">
@@ -60,8 +56,13 @@
                 <input id="evSpeed" type="number" /><br/><br/>
             </div>
             <div class="input-column ml">
-                <label for="natureza">NATUREZA:</label>
-                <input id="natureza" type="text" /><br/><br/>
+                <label for="natureza">NATUREZA:</label> 
+                <select id="natureza">
+                    <option value="modest">Modest</option>
+                    <option value="adamant">Adamant</option>
+                    <option value="lonely">Lonely</option>
+                </select>
+                <!-- <input id="natureza" type="text" /><br/><br/> -->
                 <label for="baseHp">BASE HP:</label>
                 <input id="baseHp" type="number" /><br/><br/>
                 <label for="baseAtaque">BASE ATAQUE:</label>
@@ -75,10 +76,10 @@
                 <label for="baseSpeed">BASE SPEED:</label>
                 <input id="baseSpeed" type="number" /><br/><br/>
             </div>
-            <div>
-                <button type="submit" class="Calc">Calcular</button>
-            </div>
         </form>
+        <div>
+            <button id="calcButton">Calcular</button>
+        </div>
         <div class="result">
             <label for="hpResult">HP:</label>
             <span id="hpResult"></span><br/><br/>
@@ -98,8 +99,6 @@
 <footer>
     <p>&copy;2024 By Alastor_Jr</p>
 </footer>
+<script type="module" src="script/script.js"></script>
 </body>
-<script>   
-
-</script>
 </html>

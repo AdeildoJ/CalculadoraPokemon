@@ -232,6 +232,7 @@ input[type="number"], input[type="text"] {
 .result label {
     font-weight: bold; /* Deixa o texto em negrito */
     margin-right: 20px; /* Adiciona margem à direita do rótulo */
+    
 }
 .result span {
     margin-bottom: 10px;
