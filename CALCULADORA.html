@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre Pokémon</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif; /* Define a fonte para o corpo do texto */
+            background-color: rgb(2, 15, 27);
+            color: white;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container{
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        header {
+            background-color: yellow;
+            color: rgb(2, 15, 27);;
+            font-style: oblique, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;;
+            display: flex; /* Permite que os elementos dentro do cabeçalho fiquem lado a lado */
+            align-items: center; /* Alinha os elementos verticalmente */
+            border-top-left-radius: 100px; /* Borda arredondada no canto superior esquerdo */
+            border-bottom-left-radius: 100px; /* Borda arredondada no canto inferior esquerdo */
+            border-top-right-radius: 0; /* Borda quadrada no canto superior direito */
+            border-bottom-right-radius: 0; /* Borda quadrada no canto inferior direito */
+            position: relative;
+            overflow: hidden;
+            justify-content: left; 
+        }
+        header:hover .PKM{
+            right: 0;
+        }
+        nav {
+            margin-left: 2px; /* Move a navegação para a direita */
+            position: absolute; /* Define o posicionamento absoluto */
+            bottom: 0; /* Alinha o elemento na parte inferior */
+            right: 0; /* Alinha o elemento à direita */
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block; /* Faz com que os itens da lista fiquem em linha */
+            margin-right: 10px; /* Adiciona um espaço entre os itens do menu */
+            margin-bottom: 0px;
+        }
+        nav a {
+            text-decoration: none;
+            color: rgb(2, 15, 27);
+            font-weight: bold;
+            font-family: Cambria, sans-serif; /* Altere a fonte conforme desejado */
+            padding: 10px 15px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            background-color: yellow;
+            transition: all 0.3s ease; /* Adiciona uma transição suave */
+        }
+        nav a:hover {
+            transform: scale(1.1); /* Faz com que o botão cresça ao passar o mouse */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao passar o mouse */
+        }
+        .PKM{
+            position: absolute;
+            top: 25%;
+            right: -200px;
+            transform: translateY(-50%);
+            transition: right 0.5s ease;
+
+        }
+        img {
+            position: relative;
+            /*float: left; /* Faz a imagem flutuar à esquerda do texto */
+            margin-right: 20px; /* Adiciona um espaço à direita da imagem */
+            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
+            margin-top: 5px;
+            margin-left: 5px;
+            border-radius: 0%; /* Adiciona bordas circulares à imagem */
+            width: 150px; /* Define a largura da imagem */
+            height: 150px; /* Define a altura da imagem */
+        }
+        .PKB{
+            border-radius: 50%;
+        }
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-bottom: 5px; /* Adiciona um espaço abaixo do título */
+            font-size: 24px; /* Define o tamanho da fonte do título */
+        }
+        .redes-sociais img {
+            width: 30px; /* Define a largura dos ícones das redes sociais */
+            height: 30px; /* Define a altura dos ícones das redes sociais */
+            margin-right: 10px; /* Adiciona um espaço à direita dos ícones */
+            
+        }
+        p {
+            text-align: justify;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        .Mapa01 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5px; 
+            margin-top: 5px;
+            border-radius: 0%; 
+            width: 100%; /* Define a largura máxima para a imagem */
+            height: auto; /* Mantém a proporção da altura da imagem */
+            text-align: center; /* Centraliza a imagem horizontalmente */
+            max-width: 1000px;
+        }
+        h4{
+            margin-left: 40px;
+            color: #ff4500;
+        }
+        .highlight{
+            color: #006400;
+            font-weight: bold;
+        }
+        .emphasis {
+            font-style: italic;
+        }
+        .list {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .button {
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    left: 50%; /* Posiciona o centro dos botões no centro do cabeçalho */
+    transform: translateX(-50%); /* Corrige o deslocamento horizontal */
+}
+        #login, #cadastro {
+            background-color: yellow;
+            color: rgb(2, 15, 27);
+            font-weight: bold;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        #login:hover, #cadastro:hover {
+            background-color: rgb(2, 15, 27);
+            color: yellow;
+            border-color: yellow;
+        }
+        .pokemon-images {
+    display: flex;
+    justify-content: space-between; /* Distribui as imagens igualmente ao longo do espaço disponível */
+    margin-bottom: 20px; /* Adiciona margem na parte inferior para separar a calculadora */
+}
+
+.pokemon-calculator-section {
+    position: relative;
+    display: flex;
+    justify-content: center; /* Centraliza horizontalmente o conteúdo */
+    align-items: center; /* Centraliza verticalmente o conteúdo */
+}
+
+.background-image {
+    position: absolute;
+    margin-top: 300px;
+    width: 500px; /* Defina a largura das imagens conforme necessário */
+    height: 500px; /* Defina a altura das imagens conforme necessário */
+    z-index: -1; /* Define a ordem de empilhamento para ficar atrás da calculadora */
+}
+
+.Grd {
+    left: -80px; /* Ajusta a posição da imagem do Groudon para a esquerda */
+    top: 50%; /* Ajusta a posição verticalmente */
+    transform: translateY(-50%); /* Centraliza verticalmente a imagem */
+}
+
+.Kgr {
+    right: -80px; /* Ajusta a posição da imagem do Kyogre para a direita */
+    top: 50%; /* Ajusta a posição verticalmente */
+    transform: translateY(-50%); /* Centraliza verticalmente a imagem */
+}
+
+.calculator-container {
+    width: 50%; /* Define a largura da calculadora */
+    max-width: 600px; /* Define a largura máxima da calculadora */
+    background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo da calculadora */
+    border: 2px solid rgba(255, 255, 255, 0.3); /* Borda da calculadora */
+    border-radius: 10px; /* Cantos arredondados da calculadora */
+    padding: 20px; /* Espaçamento interno da calculadora */
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Sombra da calculadora */
+}
+
+.calculator-container {
+    width: calc(50% - 10px); /* Define a largura da calculadora, deixando espaço entre ela e as imagens */
+    max-width: 600px; /* Define a largura máxima da calculadora */
+}
+        .calculator-container {
+            margin: 20px auto; /* Centraliza a calculadora horizontalmente e adiciona uma margem superior e inferior */
+            padding: 20px; /* Adiciona preenchimento interno */
+            background-color: rgba(255, 255, 255, 0.1); /* Define a cor de fundo com transparência */
+            border: 2px solid rgba(255, 255, 255, 0.3); /* Adiciona uma borda com transparência */
+            border-radius: 10px; /* Adiciona cantos arredondados */
+            box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Adiciona uma sombra */
+            width: 50%; /* Define a largura da calculadora */
+            max-width: 1000px; /* Define a largura máxima da calculadora */
+            display: flex;
+            justify-content: center; /* Alinha o conteúdo à direita*/
+            flex-wrap: wrap;
+        }
+
+        .input-column {
+            display: inline-block; /* Faz com que as colunas fiquem uma ao lado da outra */
+            vertical-align: top; /* Alinha o topo das colunas */
+            width: 45%; /* Define a largura das colunas */
+        }
+        .ml{
+            margin-left: 45px;
+        }
+        input[type="number"], input[type="text"] {
+            text-align: left;
+            margin: 5px; /* Adiciona margem entre os campos de entrada */
+            padding: 5px; /* Adiciona preenchimento interno */
+            width: calc(100% - 10px); /* Define a largura dos campos de entrada */
+        }
+
+        .result {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center; /* Alinha o texto dos resultados à esquerda */
+            margin-top: 20px; /* Adiciona margem superior ao resultado */
+        }
+
+        .result label {
+            font-weight: bold; /* Deixa o texto em negrito */
+            margin-right: 20px; /* Adiciona margem à direita do rótulo */
+        }
+        .result span {
+            margin-bottom: 10px;
+        }
+        h1,
+        button[type="submit"] {
+            text-align: center; /* Centraliza o texto */
+            display: flex;
+            justify-content: center;
+}
+
+    </style>
+</head>
+<body>
+<header>
+    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\giphy.gif" alt="Jolteon" class="PKM">
+    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\OIP (1).jpeg" alt="PKBALL" class="PKB">
+    <div class="header-content">
+        <div>
+            <h1>MESTRE POKÉMON</h1>
+            <div class="redes-sociais">
+                <a href="https://www.instagram.com/alastor_jr/" target="_blank"><img src="C:\Users\adeal\Downloads\19724-middle-removebg-preview.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/adeildoalastor/about" target="_blank"><img src="C:\Users\adeal\OneDrive\Área de Trabalho\VEKTOR ICON7.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="C:\Users\adeal\Downloads\OIP-removebg-preview.png" alt="Linkedin"></a>
+            </div>
+        </div>
+        <div class="button">
+            <button id="login">LOGIN</button>
+            <button id="cadastro">CADASTRO</button>
+        </div>        
+    <nav>
+        <ul>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/HOME.html">HOME</a></li>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/LENDA.html">LENDA</a></li>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/SISTEMA.html">SISTEMA</a></li>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/CALCULADORA.html">CALCULADORA</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\645166e0f8c10f5ca60931750ee5b8ce.png" alt="Groudon" class="background-image Grd">
+    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\R (3).png" alt="Kyogre" class="background-image Kgr">
+    <div class="calculator-container">
+        <h1>CALCULADORA STATUS POKÉMON</h1>
+        <br>
+        <form id="pokemonCalculator">
+            <div class="input-column">
+                <label for="nivel">NÍVEL:</label>
+                <input id="nivel" type="number" /><br/><br/>
+                <label for="evHp">EV HP:</label>
+                <input id="evHp" type="number" /><br/><br/>
+                <label for="evAtaque">EV ATAQUE:</label>
+                <input id="evAtaque" type="number" /><br/><br/>
+                <label for="evSpAtk">EV SP-ATK:</label>
+                <input id="evSpAtk" type="number" /><br/><br/>
+                <label for="evDefesa">EV DEFESA:</label>
+                <input id="evDefesa" type="number" /><br/><br/>
+                <label for="evSpDef">EV SP-DEF:</label>
+                <input id="evSpDef" type="number" /><br/><br/>
+                <label for="evSpeed">EV SPEED:</label>
+                <input id="evSpeed" type="number" /><br/><br/>
+            </div>
+            <div class="input-column ml">
+                <label for="natureza">NATUREZA:</label>
+                <input id="natureza" type="text" /><br/><br/>
+                <label for="baseHp">BASE HP:</label>
+                <input id="baseHp" type="number" /><br/><br/>
+                <label for="baseAtaque">BASE ATAQUE:</label>
+                <input id="baseAtaque" type="number" /><br/><br/>
+                <label for="baseSpAtk">BASE SP-ATK:</label>
+                <input id="baseSpAtk" type="number" /><br/><br/>
+                <label for="baseDefesa">BASE DEFESA:</label>
+                <input id="baseDefesa" type="number" /><br/><br/>
+                <label for="baseSpDef">BASE SP-DEF:</label>
+                <input id="baseSpDef" type="number" /><br/><br/>
+                <label for="baseSpeed">BASE SPEED:</label>
+                <input id="baseSpeed" type="number" /><br/><br/>
+            </div>
+            <div>
+                <button type="submit" class="Calc">Calcular</button>
+            </div>
+        </form>
+        <div class="result">
+            <label for="hpResult">HP:</label>
+            <span id="hpResult"></span><br/><br/>
+            <label for="atkResult">ATK:</label>
+            <span id="atkResult"></span><br/><br/>
+            <label for="spAtkResult">SP-ATK:</label>
+            <span id="spAtkResult"></span><br/><br/>
+            <label for="defResult">DEF:</label>
+            <span id="defResult"></span><br/><br/>
+            <label for="spDefResult">SP-DEF:</label>
+            <span id="spDefResult"></span><br/><br/>
+            <label for="speedResult">SPEED:</label>
+            <span id="speedResult"></span><br/><br/>
+        </div>
+    </div>
+</section>
+<footer>
+    <p>&copy;2024 By Alastor_Jr</p>
+</footer>
+</body>
+<script>   
+
+</script>
+</html>

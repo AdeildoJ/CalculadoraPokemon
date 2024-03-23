@@ -1,0 +1,242 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mestre Pokémon</title>
+    <style>
+        body {
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif; /* Define a fonte para o corpo do texto */
+            background-color: rgb(2, 15, 27);
+            color: white;
+            padding: 20px;
+            line-height: 1.6;
+        }
+        .container{
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        .TITULO1 {
+            text-align: center;
+            font-size: 30px; /* Altere o tamanho da fonte, se desejar */
+            font-weight: bold; /* Deixe o texto em negrito */
+            text-transform: uppercase; /* Transforma o texto em maiúsculas */
+            margin-left: 0px; /* Adiciona margem à esquerda para alinhamento */
+            text-decoration: underline;
+                }
+        header {
+            background-color: yellow;
+            color: rgb(2, 15, 27);;
+            font-style: oblique, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;;
+            display: flex; /* Permite que os elementos dentro do cabeçalho fiquem lado a lado */
+            align-items: center; /* Alinha os elementos verticalmente */
+            border-top-left-radius: 100px; /* Borda arredondada no canto superior esquerdo */
+            border-bottom-left-radius: 100px; /* Borda arredondada no canto inferior esquerdo */
+            border-top-right-radius: 0; /* Borda quadrada no canto superior direito */
+            border-bottom-right-radius: 0; /* Borda quadrada no canto inferior direito */
+            position: relative;
+            overflow: hidden;
+            justify-content: left; 
+        }
+        header:hover .PKM{
+            right: 0;
+        }
+        nav {
+            margin-left: 2px; /* Move a navegação para a direita */
+            position: absolute; /* Define o posicionamento absoluto */
+            bottom: 0; /* Alinha o elemento na parte inferior */
+            right: 0; /* Alinha o elemento à direita */
+        }
+        nav ul {
+            display: flex;
+            list-style-type: none;
+            padding: 0;
+        }
+        nav li {
+            display: inline-block; /* Faz com que os itens da lista fiquem em linha */
+            margin-right: 10px; /* Adiciona um espaço entre os itens do menu */
+            margin-bottom: 0px;
+        }
+        nav a {
+            text-decoration: none;
+            color: rgb(2, 15, 27);
+            font-weight: bold;
+            font-family: Cambria, sans-serif; /* Altere a fonte conforme desejado */
+            padding: 10px 15px;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            background-color: yellow;
+            transition: all 0.3s ease; /* Adiciona uma transição suave */
+        }
+        nav a:hover {
+            transform: scale(1.1); /* Faz com que o botão cresça ao passar o mouse */
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao passar o mouse */
+        }
+        .PKM{
+            position: absolute;
+            top: 25%;
+            right: -200px;
+            transform: translateY(-50%);
+            transition: right 0.5s ease;
+
+        }
+        img {
+            position: relative;
+            /*float: left; /* Faz a imagem flutuar à esquerda do texto */
+            margin-right: 20px; /* Adiciona um espaço à direita da imagem */
+            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
+            margin-top: 5px;
+            margin-left: 5px;
+            border-radius: 50%; /* Adiciona bordas circulares à imagem */
+            width: 150px; /* Define a largura da imagem */
+            height: 150px; /* Define a altura da imagem */
+        }
+        h1 {
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin-bottom: 5px; /* Adiciona um espaço abaixo do título */
+            font-size: 24px; /* Define o tamanho da fonte do título */
+        }
+        .redes-sociais img {
+            width: 30px; /* Define a largura dos ícones das redes sociais */
+            height: 30px; /* Define a altura dos ícones das redes sociais */
+            margin-right: 10px; /* Adiciona um espaço à direita dos ícones */
+            
+        }
+        p {
+            text-align: justify;
+            margin-left: 40px;
+            margin-right: 40px;
+        }
+        .Mapa01 {
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5px; 
+            margin-top: 5px;
+            border-radius: 0%; 
+            width: 100%; /* Define a largura máxima para a imagem */
+            height: auto; /* Mantém a proporção da altura da imagem */
+            text-align: center; /* Centraliza a imagem horizontalmente */
+            max-width: 1000px;
+        }
+        h4{
+            margin-left: 40px;
+            color: #ff4500;
+        }
+        .highlight{
+            color: #006400;
+            font-weight: bold;
+        }
+        .emphasis {
+            font-style: italic;
+        }
+        .list {
+            list-style: none;
+            padding-left: 20px;
+        }
+        .button {
+    display: flex;
+    justify-content: center; /* Centraliza os botões horizontalmente */
+    align-items: center; /* Centraliza os botões verticalmente */
+    position: absolute;
+    top: 10px; /* Distância do topo */
+    left: 50%; /* Posiciona o centro dos botões no centro do cabeçalho */
+    transform: translateX(-50%); /* Corrige o deslocamento horizontal */
+}
+        #login, #cadastro {
+            background-color: yellow;
+            color: rgb(2, 15, 27);
+            font-weight: bold;
+            border: 2px solid transparent;
+            border-radius: 5px;
+            padding: 10px 15px;
+            margin-right: 10px;
+            transition: all 0.3s ease;
+        }
+        #login:hover, #cadastro:hover {
+            background-color: rgb(2, 15, 27);
+            color: yellow;
+            border-color: yellow;
+        }
+        .All {
+        float: right;
+        display: block;
+            margin-left: auto;
+            margin-right: auto;
+            margin-bottom: 5px; 
+            margin-top: 5px;
+            border-radius: 0%; 
+            width: 100%; /* Define a largura máxima para a imagem */
+            height: auto; /* Mantém a proporção da altura da imagem */
+            text-align: center; /* Centraliza a imagem horizontalmente */
+            max-width: 300px;
+        }
+    </style>
+</head>
+<body>
+<header>
+    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\giphy.gif" alt="Jolteon" class="PKM">
+    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\OIP (1).jpeg" alt="PKBALL">
+    <div class="header-content">
+        <div>
+            <h1>MESTRE POKÉMON</h1>
+            <div class="redes-sociais">
+                <a href="https://www.instagram.com/alastor_jr/" target="_blank"><img src="C:\Users\adeal\Downloads\19724-middle-removebg-preview.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/adeildoalastor/about" target="_blank"><img src="C:\Users\adeal\OneDrive\Área de Trabalho\VEKTOR ICON7.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="C:\Users\adeal\Downloads\OIP-removebg-preview.png" alt="Linkedin"></a>
+            </div>
+        </div>
+        <div class="button">
+            <button id="login">LOGIN</button>
+            <button id="cadastro">CADASTRO</button>
+        </div>        
+    <nav>
+        <ul>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/HOME.html">HOME</a></li>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/LENDA.html">LENDA</a></li>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/SISTEMA.html">SISTEMA</a></li>
+            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/CALCULADORA.html">CALCULADORA</a></li>
+        </ul>
+    </nav>
+</header>
+<section>
+    <h1 class="TITULO1">REGRAS DO GRUPO</h1>
+    <img src="C:\Users\adeal\Downloads\R-removebg-preview.png" alt="Prof.All" class="All">
+    <h4>Proibido Divulgação nos Grupos de WhatsApp</h4>
+    <p>Evitar compartilhar links ou informações não relacionadas ao jogo.</p>
+    <h4>Conteúdo Apropriado para Maiores de 18 Anos</h4>
+    <p>Garantir que o conteúdo compartilhado seja adequado para todas as idades.</p>
+    <h4>Evitar Discussões e Misturar On e Off</h4>
+    <p>Manter o ambiente do jogo livre de conflitos e evitar misturar assuntos do jogo com assuntos pessoais.</p>
+    <h4>Proibido Pornofonia e Bullying</h4>
+    <p>Não permitir a divulgação de conteúdo pornográfico ou ofensivo, assim como evitar qualquer forma de bullying entre os jogadores.</p>
+    <h4>Comunicação Direta com os ADMs para Feedback</h4>
+    <p>Encorajar os jogadores a relatarem problemas diretamente aos administradores do jogo para melhorias.</p>
+    <h4>Sistema de Captura</h4>
+    <p><strong>Mecânica de Aparição:</strong> Pokémon aparecem no grupo quando uma cena com no mínimo 200 caracteres é enviada.</p>
+    <p><strong>Captura de Pokémon:</strong> Os jogadores têm a oportunidade de capturar Pokémon quando eles aparecem no grupo.</p>
+    <p><strong>Comando de Captura:</strong> Os jogadores usam o comando <code>/pkball</code> para lançar uma Pokébola e tentar capturar o Pokémon. Cada Pokébola tem uma taxa de sucesso diferente.</p>
+    <h4>Sistema de Batalhas</h4>
+    <p><strong>Mecânica de Batalha Pokémon:</strong> As batalhas Pokémon são realizadas entre jogadores.</p>
+    <p><strong>Turnos e Movimentos:</strong> Os jogadores alternam turnos e escolhem movimentos para seus Pokémon, que afetam os pontos de saúde do oponente.</p>
+    <p><strong>Vitória na Batalha:</strong> O jogador que reduzir os pontos de saúde do oponente a zero ou tiver mais pontos após um número fixo de turnos é declarado vencedor.</p>
+    <h4>Sistema de Torneio</h4>
+    <p><strong>Fase de Apresentação:</strong> Os participantes do torneio apresentam seus melhores movimentos e estratégias.</p>
+    <h4>Regras da Fase de Apresentação:</h4>
+    <ul>
+        <li>Três Turnos de Apresentação: Cada participante terá três turnos para realizar sua apresentação. Em cada turno, o jogador deve demonstrar um movimento ou uma combinação de movimentos.</li>
+        <li>Pontuação dos Movimentos Simples: Se um jogador usar apenas um movimento em um turno, ele receberá 5 pontos.</li>
+        <li>Pontuação das Combinações de Movimentos: Se um jogador realizar uma combinação de movimentos em um turno, ele receberá 15 pontos.</li>
+        <li>Pontuação dos Movimentos com Estratégia ou Itens: Se um jogador usar um movimento combinado com estratégia ou itens em um turno, ele receberá 10 pontos.</li>
+        <li>Penalidade por Repetição de Movimentos: Se um jogador repetir um movimento ou combinação que já foi realizada anteriormente durante a fase de apresentação, ele perderá 3 pontos. Isso incentiva os participantes a diversificarem seus movimentos e estratégias, tornando a apresentação mais dinâmica e criativa.</li>
+        <li>Avaliação da Apresentação: Além da pontuação atribuída aos movimentos, haverá uma avaliação da apresentação como um todo. Outros jogadores e juízes designados votarão na apresentação que considerarem a melhor. A interpretação do texto escrito também será levada em consideração durante a votação, pois é importante que a apresentação seja clara e bem interpretada.</li>
+    </ul>
+    <p><strong>Fase de Batalha:</strong> Os finalistas participam de uma batalha, onde cada movimento reduz os pontos de saúde do adversário. O vencedor é determinado após 5 turnos com base nos pontos restantes.</p>
+    <p>Essas regras garantem que a fase de apresentação seja justa e emocionante, incentivando os participantes a demonstrarem suas habilidades e criatividade na execução dos movimentos e na elaboração da estratégia.</p>
+</div>
+</section>
+<footer>
+    <p>&copy;2024 By Alastor_Jr</p>
+</footer>
+</body>
+</html>
