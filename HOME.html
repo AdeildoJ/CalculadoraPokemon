@@ -4,173 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mestre Pokémon</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif; /* Define a fonte para o corpo do texto */
-            background-color: rgb(2, 15, 27);
-            color: white;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .container{
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-        .TITULO1 {
-            text-align: center;
-            font-size: 30px; /* Altere o tamanho da fonte, se desejar */
-            font-weight: bold; /* Deixe o texto em negrito */
-            text-transform: uppercase; /* Transforma o texto em maiúsculas */
-            margin-left: 0px; /* Adiciona margem à esquerda para alinhamento */
-            text-decoration: underline;
-                }
-        header {
-            background-color: yellow;
-            color: rgb(2, 15, 27);;
-            font-style: oblique, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;;
-            display: flex; /* Permite que os elementos dentro do cabeçalho fiquem lado a lado */
-            align-items: center; /* Alinha os elementos verticalmente */
-            border-top-left-radius: 100px; /* Borda arredondada no canto superior esquerdo */
-            border-bottom-left-radius: 100px; /* Borda arredondada no canto inferior esquerdo */
-            border-top-right-radius: 0; /* Borda quadrada no canto superior direito */
-            border-bottom-right-radius: 0; /* Borda quadrada no canto inferior direito */
-            position: relative;
-            overflow: hidden;
-            justify-content: left; 
-        }
-        header:hover .PKM{
-            right: 0;
-        }
-        nav {
-            margin-left: 2px; /* Move a navegação para a direita */
-            position: absolute; /* Define o posicionamento absoluto */
-            bottom: 0; /* Alinha o elemento na parte inferior */
-            right: 0; /* Alinha o elemento à direita */
-        }
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-        }
-        nav li {
-            display: inline-block; /* Faz com que os itens da lista fiquem em linha */
-            margin-right: 10px; /* Adiciona um espaço entre os itens do menu */
-            margin-bottom: 0px;
-        }
-        nav a {
-            text-decoration: none;
-            color: rgb(2, 15, 27);
-            font-weight: bold;
-            font-family: Cambria, sans-serif; /* Altere a fonte conforme desejado */
-            padding: 10px 15px;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            background-color: yellow;
-            transition: all 0.3s ease; /* Adiciona uma transição suave */
-        }
-        nav a:hover {
-            transform: scale(1.1); /* Faz com que o botão cresça ao passar o mouse */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao passar o mouse */
-        }
-        .PKM{
-            position: absolute;
-            top: 25%;
-            right: -200px;
-            transform: translateY(-50%);
-            transition: right 0.5s ease;
-
-        }
-        img {
-            position: relative;
-            /*float: left; /* Faz a imagem flutuar à esquerda do texto */
-            margin-right: 20px; /* Adiciona um espaço à direita da imagem */
-            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
-            margin-top: 5px;
-            margin-left: 5px;
-            border-radius: 50%; /* Adiciona bordas circulares à imagem */
-            width: 150px; /* Define a largura da imagem */
-            height: 150px; /* Define a altura da imagem */
-        }
-        h1 {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            margin-bottom: 5px; /* Adiciona um espaço abaixo do título */
-            font-size: 24px; /* Define o tamanho da fonte do título */
-        }
-        .redes-sociais img {
-            width: 30px; /* Define a largura dos ícones das redes sociais */
-            height: 30px; /* Define a altura dos ícones das redes sociais */
-            margin-right: 10px; /* Adiciona um espaço à direita dos ícones */
-            
-        }
-        p {
-            text-align: justify;
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-        .Mapa01 {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 5px; 
-            margin-top: 5px;
-            border-radius: 0%; 
-            width: 100%; /* Define a largura máxima para a imagem */
-            height: auto; /* Mantém a proporção da altura da imagem */
-            text-align: center; /* Centraliza a imagem horizontalmente */
-            max-width: 1000px;
-        }
-        h4{
-            margin-left: 40px;
-            color: #ff4500;
-        }
-        .highlight{
-            color: #006400;
-            font-weight: bold;
-        }
-        .emphasis {
-            font-style: italic;
-        }
-        .list {
-            list-style: none;
-            padding-left: 20px;
-        }
-        .button {
-    display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    align-items: center; /* Centraliza os botões verticalmente */
-    position: absolute;
-    top: 10px; /* Distância do topo */
-    left: 50%; /* Posiciona o centro dos botões no centro do cabeçalho */
-    transform: translateX(-50%); /* Corrige o deslocamento horizontal */
-}
-        #login, #cadastro {
-            background-color: yellow;
-            color: rgb(2, 15, 27);
-            font-weight: bold;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            padding: 10px 15px;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        #login:hover, #cadastro:hover {
-            background-color: rgb(2, 15, 27);
-            color: yellow;
-            border-color: yellow;
-        }
-    </style>
+    <link rel="stylesheet" href="style/style.css"> 
 </head>
 <body>
 <header>
-    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\giphy.gif" alt="Jolteon" class="PKM">
-    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\OIP (1).jpeg" alt="PKBALL">
+    <img src="images\giphy.gif" alt="Jolteon" class="PKM">
+    <img src="images\OIP (1).jpeg" alt="PKBALL" class="PKB">
     <div class="header-content">
         <div>
             <h1>MESTRE POKÉMON</h1>
             <div class="redes-sociais">
-                <a href="https://www.instagram.com/alastor_jr/" target="_blank"><img src="C:\Users\adeal\Downloads\19724-middle-removebg-preview.png" alt="Instagram"></a>
-                <a href="https://www.facebook.com/adeildoalastor/about" target="_blank"><img src="C:\Users\adeal\OneDrive\Área de Trabalho\VEKTOR ICON7.png" alt="Facebook"></a>
-                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="C:\Users\adeal\Downloads\OIP-removebg-preview.png" alt="Linkedin"></a>
+                <a href="https://www.instagram.com/alastor_jr/" target="_blank"><img src="images/19724-middle.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/adeildoalastor/about" target="_blank"><img src="images/VEKTOR ICON7.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="images/link.png" alt="Linkedin"></a>
             </div>
         </div>
         <div class="button">
@@ -179,10 +25,10 @@
         </div>        
     <nav>
         <ul>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/HOME.html">HOME</a></li>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/LENDA.html">LENDA</a></li>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/SISTEMA.html">SISTEMA</a></li>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/CALCULADORA.html">CALCULADORA</a></li>
+            <li><a href="HOME.html">HOME</a></li>
+            <li><a href="LENDA.html">LENDA</a></li>
+            <li><a href="SISTEMA.html">SISTEMA</a></li>
+            <li><a href="CALCULADORA.html">CALCULADORA</a></li>
         </ul>
     </nav>
 </header>
@@ -198,7 +44,7 @@
         
         <p>Prepare-se para uma jornada épica através das terras de Lunac, onde cada passo revela um novo mistério, e cada descoberta desperta a imaginação. Aventure-se nessas terras antigas, e quem sabe, você pode desvendar os segredos que há muito tempo foram esquecidos pela história...</p>
         </p>
-        <img src="C:\Users\adeal\Downloads\Lamia 2024-03-21-20-06.png" alt="Mapa Lunac" class="Mapa01">
+        <img src="images/Mapa1.png" alt="Mapa Lunac" class="Mapa">
         <div class="container">
             <h4>Bem-vindo à Encantadora Região de Lunac! <span style="font-size: 24px;">🌟</span></h4>
             
@@ -213,7 +59,7 @@
             <p>Após escolher o seu destino, você estará pronto para desbravar o vasto mundo de Lunac. Faça amizades inesquecíveis, desvende mistérios ocultos e embarque em uma aventura épica para capturar o mais diversos monstrinhos que habitam o mapa.</p>
     
             <p>A sua jornada em Lunac está prestes a começar. Prepare-se para momentos emocionantes, desafios emocionantes e descobertas surpreendentes. O que você está esperando? Aventure-se agora mesmo e deixe a magia de Lunac envolver você! <span style="font-size: 24px;">✨🌟</span></p>
-        <img src="C:\Users\adeal\Downloads\Lamia 2024-03-21-20-09.png" alt="Mapa com Estados" class="Mapa01">
+        <img src="images/Mapa2.png" alt="Mapa com Estados" class="Mapa">
         </div>
 </section>
 <footer>

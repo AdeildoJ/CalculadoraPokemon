@@ -95,7 +95,7 @@ p {
     margin-left: 40px;
     margin-right: 40px;
 }
-.Mapa01 {
+.Mapa {
     display: block;
     margin-left: auto;
     margin-right: auto;
@@ -243,3 +243,52 @@ button[type="submit"] {
     display: flex;
     justify-content: center;
 }
+.professorAll {
+    float: right;
+    display: block;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 5px; 
+        margin-top: 5px;
+        border-radius: 0%; 
+        width: 100%; /* Define a largura máxima para a imagem */
+        height: auto; /* Mantém a proporção da altura da imagem */
+        text-align: center; /* Centraliza a imagem horizontalmente */
+        max-width: 300px;
+    }
+    .Mew {
+        float: left; /* Faz a imagem flutuar à esquerda do texto */
+        margin-right: 10px; /* Adiciona um espaço à direita da imagem */
+        margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
+        margin-top: 5px;
+        border-radius: 0%; /* Adiciona bordas circulares à imagem */
+        width: 100px; /* Define a largura da imagem */
+        height: 100px; /* Define a altura da imagem */
+    }
+    .Arceus {
+        float: left; /* Faz a imagem flutuar à esquerda do texto */
+        margin-right: 10px; /* Adiciona um espaço à direita da imagem */
+        margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
+        margin-top: 5px;
+        border-radius: 0%; /* Adiciona bordas circulares à imagem */
+        width: 200px; /* Define a largura da imagem */
+        height: 150px; /* Define a altura da imagem */
+    }
+    .Magi {
+        float: right; /* Faz a imagem flutuar à esquerda do texto */
+        margin-left: 10px; /* Adiciona um espaço à direita da imagem */
+        margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
+        margin-top: 5px;
+        border-radius: 0%; /* Adiciona bordas circulares à imagem */
+        width: 100px; /* Define a largura da imagem */
+        height: 100px; /* Define a altura da imagem */
+    }
+    .Alogard {
+        float: right; /* Faz a imagem flutuar à esquerda do texto */
+        margin-left: 10px; /* Adiciona um espaço à direita da imagem */
+        margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
+        margin-top: 5px;
+        border-radius: 0%; /* Adiciona bordas circulares à imagem */
+        width: 200px; /* Define a largura da imagem */
+        height: 150px; /* Define a altura da imagem */
+    }

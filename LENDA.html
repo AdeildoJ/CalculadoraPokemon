@@ -4,209 +4,19 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Mestre Pokémon</title>
-    <style>
-        body {
-            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif; /* Define a fonte para o corpo do texto */
-            background-color: rgb(2, 15, 27);
-            color: white;
-            padding: 20px;
-            line-height: 1.6;
-        }
-        .container{
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-        .TITULO1 {
-            text-align: center;
-            font-size: 30px; /* Altere o tamanho da fonte, se desejar */
-            font-weight: bold; /* Deixe o texto em negrito */
-            text-transform: uppercase; /* Transforma o texto em maiúsculas */
-            margin-left: 0px; /* Adiciona margem à esquerda para alinhamento */
-            text-decoration: underline;
-                }
-        header {
-            background-color: yellow;
-            color: rgb(2, 15, 27);;
-            font-style: oblique, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif, sans-serif;;
-            display: flex; /* Permite que os elementos dentro do cabeçalho fiquem lado a lado */
-            align-items: center; /* Alinha os elementos verticalmente */
-            border-top-left-radius: 100px; /* Borda arredondada no canto superior esquerdo */
-            border-bottom-left-radius: 100px; /* Borda arredondada no canto inferior esquerdo */
-            border-top-right-radius: 0; /* Borda quadrada no canto superior direito */
-            border-bottom-right-radius: 0; /* Borda quadrada no canto inferior direito */
-            position: relative;
-            overflow: hidden;
-            justify-content: left; 
-        }
-        header:hover .PKM{
-            right: 0;
-        }
-        nav {
-            margin-left: 2px; /* Move a navegação para a direita */
-            position: absolute; /* Define o posicionamento absoluto */
-            bottom: 0; /* Alinha o elemento na parte inferior */
-            right: 0; /* Alinha o elemento à direita */
-        }
-        nav ul {
-            display: flex;
-            list-style-type: none;
-            padding: 0;
-        }
-        nav li {
-            display: inline-block; /* Faz com que os itens da lista fiquem em linha */
-            margin-right: 10px; /* Adiciona um espaço entre os itens do menu */
-            margin-bottom: 0px;
-        }
-        nav a {
-            text-decoration: none;
-            color: rgb(2, 15, 27);
-            font-weight: bold;
-            font-family: Cambria, sans-serif; /* Altere a fonte conforme desejado */
-            padding: 10px 15px;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            background-color: yellow;
-            transition: all 0.3s ease; /* Adiciona uma transição suave */
-        }
-        nav a:hover {
-            transform: scale(1.1); /* Faz com que o botão cresça ao passar o mouse */
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.5); /* Adiciona sombra ao passar o mouse */
-        }
-        .PKM{
-            position: absolute;
-            top: 25%;
-            right: -200px;
-            transform: translateY(-50%);
-            transition: right 0.5s ease;
-
-        }
-        img {
-            position: relative;
-            /*float: left; /* Faz a imagem flutuar à esquerda do texto */
-            margin-right: 20px; /* Adiciona um espaço à direita da imagem */
-            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
-            margin-top: 5px;
-            margin-left: 5px;
-            border-radius: 50%; /* Adiciona bordas circulares à imagem */
-            width: 150px; /* Define a largura da imagem */
-            height: 150px; /* Define a altura da imagem */
-        }
-        h1 {
-            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-            margin-bottom: 5px; /* Adiciona um espaço abaixo do título */
-            font-size: 24px; /* Define o tamanho da fonte do título */
-        }
-        .redes-sociais img {
-            width: 30px; /* Define a largura dos ícones das redes sociais */
-            height: 30px; /* Define a altura dos ícones das redes sociais */
-            margin-right: 10px; /* Adiciona um espaço à direita dos ícones */
-            
-        }
-        p {
-            text-align: justify;
-            margin-left: 40px;
-            margin-right: 40px;
-        }
-        .Arceus1 {
-            display: block;
-            margin-left: auto;
-            margin-right: auto;
-            margin-bottom: 5px; 
-            margin-top: 5px;
-            border-radius: 0%; 
-            width: 100%; /* Define a largura máxima para a imagem */
-            height: auto; /* Mantém a proporção da altura da imagem */
-            text-align: center; /* Centraliza a imagem horizontalmente */
-            max-width: 1000px;
-        }
-        .Mew {
-            float: left; /* Faz a imagem flutuar à esquerda do texto */
-            margin-right: 10px; /* Adiciona um espaço à direita da imagem */
-            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
-            margin-top: 5px;
-            border-radius: 0%; /* Adiciona bordas circulares à imagem */
-            width: 100px; /* Define a largura da imagem */
-            height: 100px; /* Define a altura da imagem */
-        }
-        .Arceus {
-            float: left; /* Faz a imagem flutuar à esquerda do texto */
-            margin-right: 10px; /* Adiciona um espaço à direita da imagem */
-            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
-            margin-top: 5px;
-            border-radius: 0%; /* Adiciona bordas circulares à imagem */
-            width: 200px; /* Define a largura da imagem */
-            height: 150px; /* Define a altura da imagem */
-        }
-        .Magi {
-            float: right; /* Faz a imagem flutuar à esquerda do texto */
-            margin-left: 10px; /* Adiciona um espaço à direita da imagem */
-            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
-            margin-top: 5px;
-            border-radius: 0%; /* Adiciona bordas circulares à imagem */
-            width: 100px; /* Define a largura da imagem */
-            height: 100px; /* Define a altura da imagem */
-        }
-        .Alogard {
-            float: right; /* Faz a imagem flutuar à esquerda do texto */
-            margin-left: 10px; /* Adiciona um espaço à direita da imagem */
-            margin-bottom: 5px; /* Adiciona um espaço abaixo da imagem */
-            margin-top: 5px;
-            border-radius: 0%; /* Adiciona bordas circulares à imagem */
-            width: 200px; /* Define a largura da imagem */
-            height: 150px; /* Define a altura da imagem */
-        }
-        h4{
-            margin-left: 40px;
-            color: #ff4500;
-        }
-        .highlight{
-            color: #006400;
-            font-weight: bold;
-        }
-        .emphasis {
-            font-style: italic;
-        }
-        .list {
-            list-style: none;
-            padding-left: 20px;
-        }
-        .button {
-    display: flex;
-    justify-content: center; /* Centraliza os botões horizontalmente */
-    align-items: center; /* Centraliza os botões verticalmente */
-    position: absolute;
-    top: 10px; /* Distância do topo */
-    left: 50%; /* Posiciona o centro dos botões no centro do cabeçalho */
-    transform: translateX(-50%); /* Corrige o deslocamento horizontal */
-}
-        #login, #cadastro {
-            background-color: yellow;
-            color: rgb(2, 15, 27);
-            font-weight: bold;
-            border: 2px solid transparent;
-            border-radius: 5px;
-            padding: 10px 15px;
-            margin-right: 10px;
-            transition: all 0.3s ease;
-        }
-        #login:hover, #cadastro:hover {
-            background-color: rgb(2, 15, 27);
-            color: yellow;
-            border-color: yellow;
-        }
-    </style>
+    <link rel="stylesheet" href="style/style.css"> 
 </head>
 <body>
 <header>
-    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\giphy.gif" alt="Jolteon" class="PKM">
-    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\OIP (1).jpeg" alt="PKBALL">
+    <img src="images\giphy.gif" alt="Jolteon" class="PKM">
+    <img src="images\OIP (1).jpeg" alt="PKBALL" class="PKB">
     <div class="header-content">
         <div>
             <h1>MESTRE POKÉMON</h1>
             <div class="redes-sociais">
-                <a href="https://www.instagram.com/alastor_jr/" target="_blank"><img src="C:\Users\adeal\Downloads\19724-middle-removebg-preview.png" alt="Instagram"></a>
-                <a href="https://www.facebook.com/adeildoalastor/about" target="_blank"><img src="C:\Users\adeal\OneDrive\Área de Trabalho\VEKTOR ICON7.png" alt="Facebook"></a>
-                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="C:\Users\adeal\Downloads\OIP-removebg-preview.png" alt="Linkedin"></a>
+                <a href="https://www.instagram.com/alastor_jr/" target="_blank"><img src="images/19724-middle.png" alt="Instagram"></a>
+                <a href="https://www.facebook.com/adeildoalastor/about" target="_blank"><img src="images/VEKTOR ICON7.png" alt="Facebook"></a>
+                <a href="https://www.linkedin.com/feed/?trk=guest_homepage-basic_nav-header-signin" target="_blank"><img src="images/link.png" alt="Linkedin"></a>
             </div>
         </div>
         <div class="button">
@@ -215,26 +25,26 @@
         </div>        
     <nav>
         <ul>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/HOME.html">HOME</a></li>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/LENDA.html">LENDA</a></li>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/SISTEMA.html">SISTEMA</a></li>
-            <li><a href="file:///C:/Users/adeal/OneDrive/%C3%81rea%20de%20Trabalho/prjt%20TASCON.JR/CALCULADORA.html">CALCULADORA</a></li>
+            <li><a href="HOME.html">HOME</a></li>
+            <li><a href="LENDA.html">LENDA</a></li>
+            <li><a href="SISTEMA.html">SISTEMA</a></li>
+            <li><a href="CALCULADORA.html">CALCULADORA</a></li>
         </ul>
     </nav>
 </header>
 <section>
     <P>Durante eras, acredita-se que o mundo foi criado por Arceus, o Deus Pokémon. No entanto, a Região de Lunac emerge para desafiar essa concepção, revelando uma história muito mais profunda e intrigante.</P>
     <H4>A LENDA DE LUNAC</H4>
-    <img src="C:\Users\adeal\OneDrive\Área de Trabalho\67aa336b3607c6e05d2ce82472e0026d524b57e5_hq.gif" alt="Arceus M.DG" class="Arceus1">
+    <img src="images/meteoro.gif" alt="Arceus M.DG" class="Mapa">
     <p>De acordo com as ruínas nos antigos templos da Lua, um ser de luz desencadeou um poder tão grandioso
         que se manifestou como uma explosão cósmica, permeando todo o universo. 
-        Esse poder primordial deu origem a quatro seres míticos <img src="C:\Users\adeal\Downloads\R__2_-removebg-preview.png" alt="Mew" class="Mew">
+        Esse poder primordial deu origem a quatro seres míticos <img src="images/mew1.png" alt="Mew" class="Mew">
         incumbidos de zelar pela origem da vida em um pequeno planeta entre as vastidões do cosmos.
         Arceus foi um desses Pokémon, contando com a ajuda de Mew, uma entidade brincalhona 
         que detinha o DNA e a essência vital de todas as espécies do mundo. Além deles, surgiram 
         Alogard, um ser magnífico de luz adornado com imponentes asas, e Magi, um pequeno guardião
         de pelos escuros e acinzentados, encarregado de guiar humanos e Pokémon para o pós-vida.
-        <img src="C:\Users\adeal\Downloads\dcp9y5t-1d547f66-15cf-4e29-b797-c9b26f0a2d30-removebg-preview.png" alt="Magi" class="Magi">
+        <img src="images/magi.png" alt="Magi" class="Magi">
             À medida que a Terra prosperava, Alogard concedia inteligência às criaturas vivas, 
             promovendo seu desenvolvimento, enquanto Arceus moldava rios e montanhas, dotando o mundo de vida e beleza. 
             No entanto, a corrupção se insinuou entre humanos e Pokémon, e a escuridão ameaçou engolfar a Terra.
@@ -256,9 +66,9 @@
             A ira de Alogard se voltou contra seu próprio filho, mas o amor de Alogard por sua criatura 
             Alpha o impediu de retaliar. Em um ato de sacrifício supremo, 
             Alogard fundiu sua alma com a de Alpha, aguardando o desenrolar natural dos acontecimentos.
-        <img src="C:\Users\adeal\Downloads\R__1_-removebg-preview.png" alt="Arceus2" class="Arceus">Alpha, por sua vez, selou seu corpo, 
+        <img src="images/arceus1.png" alt="Arceus2" class="Arceus">Alpha, por sua vez, selou seu corpo, 
         sacrificando-se para dar origem à lendária 
-        Região de Lunac, <img src="C:\Users\adeal\Downloads\OIP__2_-removebg-preview.png" alt="Alogard" class="Alogard">onde ambos residem em harmonia. 
+        Região de Lunac, <img src="images/Alogard.png" alt="Alogard" class="Alogard">onde ambos residem em harmonia. 
         O povo de Lunac, ciente dessa história, aguarda com esperança o retorno de Alogard, clamando por perdão e 
         misericórdia para um dia de paz e redenção. Lunac, uma região misteriosa e encantadora, é envolta em lendas e segredos há séculos. 
         Suas paisagens exuberantes são marcadas por ruínas ancestrais e uma aura de magia que paira no ar. 
