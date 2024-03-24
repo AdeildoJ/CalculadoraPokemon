@@ -237,8 +237,7 @@ input[type="number"], input[type="text"] {
 .result span {
     margin-bottom: 10px;
 }
-h1,
-button[type="submit"] {
+h1, button[type="submit"] {
     text-align: center; /* Centraliza o texto */
     display: flex;
     justify-content: center;
@@ -292,3 +291,29 @@ button[type="submit"] {
         width: 200px; /* Define a largura da imagem */
         height: 150px; /* Define a altura da imagem */
     }
+    .result {
+        margin-top: 20px;
+        margin-bottom: 5px;
+        font-weight: bold;
+        margin-inline-start: auto;
+        border-radius: 5px;
+        margin: 20px 20px; /* Centraliza a calculadora horizontalmente e adiciona uma margem superior e inferior */
+        padding: 5px; /* Adiciona preenchimento interno */
+        background-color: rgba(255, 255, 255, 0.1); /* Define a cor de fundo com transparência */
+        border: 2px solid rgba(255, 255, 255, 0.3); /* Adiciona uma borda com transparência */
+        border-radius: 10px; /* Adiciona cantos arredondados */
+        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Adiciona uma sombra */
+        text-align: center;
+        
+    }
+        .Rs{
+            display: flex;
+            color: yellow;
+            border-radius: 5px;
+        margin-bottom: 10px;
+        margin-right: auto;
+        margin-left: 5px;
+        text-transform: uppercase;
+        padding: 5px 10px;
+        }
+    

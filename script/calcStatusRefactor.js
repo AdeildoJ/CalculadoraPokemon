@@ -200,26 +200,25 @@ export function calcStatus() {
     let Chance_Critico = 100;
     let Evasiva = 100;
     console.log("Função foi chamada");
-    let Nivel = document.getElementById("nivel").value
+    let Nivel = parseInt(document.getElementById("nivel").value)
     let Natureza = document.getElementById("natureza").value
-    let Evs_HP = document.getElementById("evHp").value
-    let Evs_Ataque_Fisico =  document.getElementById("evAtaque").value
-    let Evs_Ataque_Especial = document.getElementById("evSpAtk").value
-    let Evs_Defesa_Fisica =  document.getElementById("evDefesa").value
-    let Evs_Defesa_Especial = document.getElementById("evSpDef").value
-    let Evs_Velocidade =  document.getElementById("evSpeed").value
+    let Evs_HP = parseInt(document.getElementById("evHp").value)
+    let Evs_Ataque_Fisico =  parseInt(document.getElementById("evAtaque").value)
+    let Evs_Ataque_Especial = parseInt(document.getElementById("evSpAtk").value)
+    let Evs_Defesa_Fisica =  parseInt(document.getElementById("evDefesa").value)
+    let Evs_Defesa_Especial = parseInt(document.getElementById("evSpDef").value)
+    let Evs_Velocidade =  parseInt(document.getElementById("evSpeed").value)
     //STATUS BASE
-    let Pontos_De_Saude_Base =  document.getElementById("baseHp").value
-    let Ataque_Fisico_Base = document.getElementById("baseAtaque").value
-    let Ataque_Especial_Base =  document.getElementById("baseSpAtk").value
-    let Defesa_Fisica_Base = document.getElementById("baseDefesa").value
-    let Defesa_Especial_Base =  document.getElementById("baseSpDef").value
-    let Velocidade_Base =  document.getElementById("baseSpeed").value
+    let Pontos_De_Saude_Base =  parseInt(document.getElementById("baseHp").value)
+    let Ataque_Fisico_Base = parseInt(document.getElementById("baseAtaque").value)
+    let Ataque_Especial_Base =  parseInt(document.getElementById("baseSpAtk").value)
+    let Defesa_Fisica_Base = parseInt(document.getElementById("baseDefesa").value)
+    let Defesa_Especial_Base =  parseInt(document.getElementById("baseSpDef").value)
+    let Velocidade_Base =  parseInt(document.getElementById("baseSpeed").value)
     // // BASE DE CALCULO STATUS
     Pontos_De_Saude = ((31+(Evs_HP/4)+2*Pontos_De_Saude_Base)*Nivel/100)+10+Nivel
     
     let natureCalcResult = natureResult(Natureza)
-    
         Ataque_Fisico = ((((2 * Ataque_Fisico_Base + 31 + (Evs_Ataque_Fisico / 4)) * Nivel) / 100) + 5) * natureCalcResult.Ataque_Fisico
         Defesa_Fisica = ((((2 * Defesa_Fisica_Base + 31 + (Evs_Defesa_Fisica / 4)) * Nivel) / 100) + 5) * natureCalcResult.Defesa_Fisica
         Ataque_Especial = ((((2 * Ataque_Especial_Base + 31 + (Evs_Ataque_Especial / 4)) * Nivel) / 100) + 5)* natureCalcResult.Ataque_Especial

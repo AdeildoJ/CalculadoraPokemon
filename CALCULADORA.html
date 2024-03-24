@@ -62,6 +62,7 @@
                     <option value="adamant">Adamant</option>
                     <option value="lonely">Lonely</option>
                 </select>
+                <br><br>
                 <!-- <input id="natureza" type="text" /><br/><br/> -->
                 <label for="baseHp">BASE HP:</label>
                 <input id="baseHp" type="number" /><br/><br/>
@@ -81,19 +82,29 @@
             <button id="calcButton">Calcular</button>
         </div>
         <div class="result">
-            <label for="hpResult">HP:</label>
-            <span id="hpResult"></span><br/><br/>
-            <label for="atkResult">ATK:</label>
-            <span id="atkResult"></span><br/><br/>
-            <label for="spAtkResult">SP-ATK:</label>
-            <span id="spAtkResult"></span><br/><br/>
-            <label for="defResult">DEF:</label>
-            <span id="defResult"></span><br/><br/>
-            <label for="spDefResult">SP-DEF:</label>
-            <span id="spDefResult"></span><br/><br/>
-            <label for="speedResult">SPEED:</label>
-            <span id="speedResult"></span><br/><br/>
-        </div>
+            <div class="result-group">
+                <label for="hpResult">HP</label>
+                <span id="hpResult" class="Rs"></span>
+            </div>
+            <div class="result-group">
+                <label for="atkResult">ATK</label>
+                <span id="atkResult" class="Rs"></span>
+            </div>
+            <div class="result-group">
+                <label for="spAtkResult">SP-ATK</label>
+                <span id="spAtkResult" class="Rs"></span>
+            </div>
+            <div class="result-group">
+                <label for="defResult">DEF</label>
+                <span id="defResult" class="Rs"></span>
+            </div>
+            <div class="result-group">
+                <label for="spDefResult">SP-DEF</label>
+                <span id="spDefResult" class="Rs"></span>
+            </div>
+            <div class="result-group">
+                <label for="speedResult">SPEED</label>
+                <span id="speedResult" class="Rs"></span>
     </div>
 </section>
 <footer>
