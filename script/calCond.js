@@ -1,19 +1,20 @@
-const prompt = require('prompt-sync')({sigint: true});
-console.log("Inicio do programa: ")
+//const prompt = require('prompt-sync')({sigint: true});
+//console.log("Inicio do programa: ")
 
-let Nivel = prompt('Qual o Nível do Pokémon: ')
-let hp = prompt("Qual o HP: ");
-let Cond_HP = prompt("O HP do Pokémon está sob alguma condição, se sim qual?: ");
-let Ataque_Fisico = prompt("Qual o ATK-F: ");
-let Cond_ATK = prompt("O STATUS de ATK do Pokémon possui alguma STAGE(-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6): ");
-let Defesa_Fisica = prompt("Qual a DEF-F: ");
-let Cond_DEF = prompt("O STATUS de DEF do Pokémon possui alguma STAGE(-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6): ");
-let Ataque_Especial = prompt("Qual o SP-ATK: ");
-let Cond_SP_ATK = prompt("O STATUS de SP-ATK do Pokémon possui alguma STAGE(-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6): ");
-let Defesa_Especial = prompt("Qual a SP-DEF: ");
-let Cond_SP_DEF = prompt("O STATUS de SP-DEF do Pokémon possui alguma STAGE(-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6): ");
-let Speed = prompt("Qual a SPEED: ");
-let Cond_Speed = prompt("O STATUS de SPEED do Pokémon possui alguma STAGE(-1,-2,-3,-4,-5,-6,0,1,2,3,4,5,6): ");
+export function calcCond() {
+    let Nivel = parseInt(document.getElementById("nivel").value)
+    let hp = parseInt(document.getElementById("hpResult").value)
+    let Cond_HP = parseInt(document.getElementById("Cond_HP").value);
+    let Ataque_Fisico = parseInt(document.getElementById("atkResult").value);
+    let Cond_ATK = parseInt(document.getElementById("stage").value);
+    let Defesa_Fisica = parseInt(document.getElementById("defResult").value);
+    let Cond_DEF = parseInt(document.getElementById("stage").value);
+    let Ataque_Especial = parseInt(document.getElementById("spAtkResult").value);
+    let Cond_SP_ATK = parseInt(document.getElementById("stage").value);
+    let Defesa_Especial = parseInt(document.getElementById("spDefResult").value);
+    let Cond_SP_DEF = parseInt(document.getElementById("stage").value);
+    let Speed = parseInt(document.getElementById("speedResult").value);
+    let Cond_Speed = parseInt(document.getElementById("stage").value);
 
 //CONDIÇÕES-STAG'S
 let Status_Pokemon = {
@@ -79,11 +80,19 @@ let novoSP_ATK = calcularNovoValor(Status_Pokemon['SP_ATK'], parseInt(Cond_SP_AT
 let novoSP_DEF = calcularNovoValor(Status_Pokemon['SP_DEF'], parseInt(Cond_SP_DEF));
 let novoSPEED = calcularNovoValor(Status_Pokemon['SPEED'], parseInt(Cond_Speed));
 
-console.log('NOVO ATK: ', Math.trunc(novoATK));
-console.log('NOVA DEF: ', Math.trunc(novoDEF));
-console.log('NOVO SP-ATK: ', Math.trunc(novoSP_ATK));
-console.log('NOVO SP-DEF: ', Math.trunc(novoSP_DEF));
-console.log('NOVA SPEED: ', Math.trunc(novoSPEED));
+    const novoHpTag = document.getElementById("novoHpResult");
+    const novoAtkFisTag = document.getElementById("novoAtkResult");
+    const novoAtkEspTag = document.getElementById("novoSpAtkResult");
+    const novoDefFis = document.getElementById("novoDefResult");
+    const novoSpDefTag = document.getElementById("novoSpDefResult");
+    const novoSpeedTag = document.getElementById("novoSpeedResult");
+
+
+    novoAtkFisTag.innerHTML = Math.trunc(novoATK)
+    novoAtkEspTag.innerHTML = Math.trunc(novoSP_ATK)
+    novoDefFis.innerHTML = Math.trunc(novoDEF)
+    novoSpDefTag.innerHTML = Math.trunc(novoSP_DEF)
+    novoSpeedTag.innerHTML = Math.trunc(novoSPEED);
 
 // Exemplo para a condição de HP
 if (Cond_HP === "paralyse") {   
@@ -94,7 +103,7 @@ if (Cond_HP === "paralyse") {
     }
 } else if (Cond_HP === "poison") {
     veneno = Math.trunc(hp*0.125);
-    console.log('NOVO HP: ' ,Math.trunc(hp-veneno)) 
+    novoHpTag.innerHTML = Math.trunc(hp-veneno) 
 } else if (Cond_HP === "sleep") {
     // Sorteando um número de 1 a 3
 const numeroSorteado = Math.floor(Math.random() * 3) + 1;
@@ -110,7 +119,7 @@ if (numeroAleatorio2 <= 50) {
     formula = (2 * Nivel + 10) / 250 * (Ataque_Fisico / Defesa_Fisica) * 50 + 2;
     calculo = formula * multiplicador;
     console.log('Seu Pokémon está se batendo, Dano Causado: ' , calculo);
-    console.log('HP atual: ' , Math.trunc(calculo - hp));
+    novoHpTag.innerHTML = Math.trunc(calculo - hp)
 }
 } else if (Cond_HP === "freeze"){
     console.log("Seu Pokémon ficará congelado por :", numeroSorteado, "Turnos");
@@ -124,5 +133,6 @@ if (numeroAleatorio2 <= 50) {
     console.log("Seu Pokémon não pode fugir da batalha");
     console.log('NOVO HP:', Math.trunc(hp));
 } else {
-    console.log("Hp sem condição");   
+    novoHpTag.innerHTML = Math.trunc(hp)   
+}
 }
