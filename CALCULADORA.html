@@ -194,7 +194,7 @@
 <button type="button" id="calcButtonDano">Calcular</button>
 <section class="ResultCalcDano">
     <div class="result-Dano">
-        <label for="ResultDano">DANO:</label>
+        <label for="ResultDano"><h4>DANO:</h4></label>
     </div>
     <div class="RsDano">
         <span id="ResultDano" class="RsDano"></span>
@@ -204,10 +204,96 @@
     </div>
         </form>
 </section>
+<!--_____________________________CALCULADORA LEVELUP____________________________________-->
+<section>
+    <section>
+        <div class="Calc-LevelUp">
+            <h1>CALCULADORA DE NÍVEL</h1>
+            <br>
+            <div class="CheckEgg" id="ItensTreino">
+                <div>
+                    <input type="checkbox" id="LuckyEgg" name="LuckyEgg">
+                    <label for="LuckyEgg">Lucky Egg</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="ExpShare" name="ExpShare">
+                    <label for="ExpShare">ExP.Share</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="monotreinamento" name="monotreinamento">
+                    <label for="monotreinamento">Mono-Treino</label>
+                </div>
+                <div>
+                    <input type="checkbox" id="penalidade" name="penalidade">
+                    <label for="penalidade">Penalidade</label>
+                </div>
+            </div>
+            <div class="ColunaExpBatalha">
+                    <label for="batalha">BATALHA:
+                        <select name="batalha" id="batalha">
+                            <option value="--">--</option>
+                            <option value="selvagem">Selvagem</option>
+                            <option value="gym">Gym Leader</option>
+                            <option value="pvp">PVP</option>
+                        </select>
+                    <label for="batalha">RESULT:
+                        <select name="resultado" id="resultado">
+                            <option value="--">--</option>
+                            <option value="vitoria">Vitoria</option>
+                            <option value="empate">Empate</option>
+                            <option value="derrota">Derrota</option>
+                        </select>
+                        <br><br>
+                    <label for="nvPKM">NÍVEL POKÉMON:</label>
+                        <input id="nvPKM" type="number" />
+                    <label for="nvADV">NÍVEL ADVERSARIO:</label>
+                        <input id="nvADV" type="number" />
+                    <label for="StBase">STATUS BASE ADV:</label>
+                        <input id="StBase" type="number" />
+            </div>
+            <div class="ColunaLevelUp">
+                <label for="NvTreino">Nv TREINO:
+                    <select name="NvTreino" id="NvTreino">
+                        <option value="--">--</option>
+                        <option value="SS">SS</option>
+                        <option value="S">S</option>
+                        <option value="A">A</option>
+                        <option value="B">B</option>
+                        <option value="C">C</option>
+                        <option value="D">D</option>
+                    </select>
+                <section class="ResultExpBatalha">
+                    <div class="result-Exp-Batalha">
+                        <label for="ResultExpBatalha">EXP GANHO: </label>
+                    </div>
+                    <div class="RsExpBatalha">
+                        <span id="resultadoBattle" class="RsExpBatalha"></span>
+                    </div> 
+                </section>
+                <label for="ExpBox">EXP BOX:
+                    <input id="ExpBox" type="number" />
+            
+            <section class="ResultUp">
+                <div class="result-Up">
+                    <label for="result-Up">Lv:</label>
+                    <label for="ExpResto">Nv ExP:</label>
+                </div>
+                <div class="RsUp">
+                    <span id="LvUp" class="RsUp"></span>
+                    <span id="ExpRestante" class="RsUp"></span>
+                </div>
+                <br>
+                <button class="buttonUP" type="button" id="calcButtonUp">Up</button>
+            </div>     
+            </section>
+        </div>
+    </section>
+</section>
 <footer>
     <p>&copy;2024 By Alastor_Jr</p>
 </footer>
 <script type="module" src="script/script.js"></script>
 <script type="module" src="script/CalcDano.js"></script>
+<script type="module" src="script/CalcExp2.js"></script>
 </body>
 </html>

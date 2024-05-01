@@ -172,15 +172,17 @@ z-index: -1; /* Define a ordem de empilhamento para ficar atrás da calculadora 
 left: -80px; /* Ajusta a posição da imagem do Groudon para a esquerda */
 top: 50%; /* Ajusta a posição verticalmente */
 transform: translateY(-50%); /* Centraliza verticalmente a imagem */
+opacity: 80%;
 }
 
 .Kgr {
 right: -80px; /* Ajusta a posição da imagem do Kyogre para a direita */
 top: 50%; /* Ajusta a posição verticalmente */
 transform: translateY(-50%); /* Centraliza verticalmente a imagem */
+opacity: 80%;
 }
 
-.calculator-container {
+.calculator-container, .calculator-container-DANO, .Calc-LevelUp {
     width: 50%; /* Define a largura da calculadora */
     max-width: 600px; /* Define a largura máxima da calculadora */
     background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo da calculadora */
@@ -309,26 +311,7 @@ h1, button[type="submit"] {
         display: flex;
         color: yellowgreen;   
     }
-    .calculator-container-DANO {
-        width: 50%; /* Define a largura da calculadora */
-        max-width: 600px; /* Define a largura máxima da calculadora */
-        background-color: rgba(255, 255, 255, 0.1); /* Cor de fundo da calculadora */
-        border: 2px solid rgba(255, 255, 255, 0.3); /* Borda da calculadora */
-        border-radius: 10px; /* Cantos arredondados da calculadora */
-        padding: 20px; /* Espaçamento interno da calculadora */
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Sombra da calculadora */
-        margin: 20px auto; /* Centraliza a calculadora horizontalmente e adiciona uma margem superior e inferior */
-        padding: 20px; /* Adiciona preenchimento interno */
-        background-color: rgba(255, 255, 255, 0.1); /* Define a cor de fundo com transparência */
-        border: 2px solid rgba(255, 255, 255, 0.3); /* Adiciona uma borda com transparência */
-        border-radius: 10px; /* Adiciona cantos arredondados */
-        box-shadow: 0 0 20px rgba(255, 255, 255, 0.5); /* Adiciona uma sombra */
-        width: 50%; /* Define a largura da calculadora */
-        max-width: 1000px; /* Define a largura máxima da calculadora */
-        display: flex;
-        justify-content: center; /* Alinha o conteúdo no centro*/
-        flex-wrap: wrap;
-    }
+    
     .input-column-calcDano {
         display: inline-block; /* Faz com que as colunas fiquem uma ao lado da outra */
         vertical-align: top; /* Alinha o topo das colunas */
@@ -344,13 +327,78 @@ h1, button[type="submit"] {
         padding: 5px; /* Adiciona preenchimento interno */
         width: calc(90% - 10px); /* Define a largura dos campos de entrada */
     }
-    .IIIColuna{
+    .IIIColuna, .IVColuna{
         text-align: center;
         margin: 5px;
         padding-left: 5px;
+    }  
+    .RsDano{
+        color: yellow;
+        float: left;
+        margin-top: 10px;
+        margin-left: 10px;
     }
-    .IVColuna{
+    .result-Dano{
+        color: red !important;
+        float: left;
+    }
+    .Calc-LevelUp {
+        text-align: center !important; /* Centralizar o conteúdo */
+        display: block;
+    }
+    .CheckEgg {
+        margin-bottom: 10px; /* Espaço acima da lista de checkboxes */
+    }
+    .CheckEgg div {
+        display: inline-block; /* Colocar os itens na mesma linha */
+        margin-right: 20px; /* Espaço entre os itens */
+    }
+    
+    .CheckEgg input[type="checkbox"] {
+        display: none; /* Esconder as checkboxes padrão */
+    }
+    
+    .CheckEgg label {
+        cursor: pointer; /* Mostrar o cursor como ponteiro ao passar por cima */
+        display: inline-block; /* Colocar as labels e as checkboxes na mesma linha */
+        padding-left: 10px; /* Espaço à esquerda para a label */
+        position: relative; /* Para que possamos estilizar o checkbox personalizado */
+    }
+    
+    .CheckEgg label:before {
+        content: ""; /* Adicionar o checkbox personalizado */
+        border: 2px solid #f8f5f5; /* Borda do checkbox */
+        border-radius: 50%; /* Deixar o checkbox redondo */
+        width: 10px; /* Largura do checkbox */
+        height: 10px; /* Altura do checkbox */
+        display: inline-block; /* Permitir espaçamento ao lado da label */
+        position: absolute; /* Posicionamento absoluto em relação à label */
+        left: -10px; /* Colocar o checkbox no início da label */
+        top: 5px; /* Ajustar verticalmente */
+    }
+    
+    .CheckEgg input[type="checkbox"]:checked + label:before {
+        background-color: green; /* Mudar a cor de fundo quando estiver marcado */
+    }
+    .ColunaExpBatalha,.ColunaLevelUp{
+        display: inline-block; /* Faz com que as colunas fiquem uma ao lado da outra */
+        vertical-align: top; /* Alinha o topo das colunas */
+        width: 48%; /* Define a largura das colunas */
+        margin-left: 5px;
+        text-align: left;
+        justify-content: left;
+    }
+    .buttonUP{
+        display: flex;
+        padding: 10px 10px;
+        background-color: #9604da;
+        color: #fff;
+        font-size: 16px;
         text-align: center;
-        margin: 5px;
-        padding-left: 5px;
+        vertical-align: middle;
+        line-height: normal;
+        border-radius: 50%;
+        float: inline-end;
     }
+    
+    
